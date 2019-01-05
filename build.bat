@@ -5,7 +5,7 @@ go-bindata -nomemcopy -o assets.go assets
 go fmt
 cls
 rem go run paktool.go assets.go -c=unpack -f=resources.pak
-go run paktool.go assets.go -c=repack -f=resources.json
+rem go run paktool.go assets.go -c=repack -f=resources.json
 rem go run paktool.go assets.go -c=lang_unpack -f=zh-CN.pak
 rem go run paktool.go assets.go -c=lang_repack -f=zh-CN.json
 pause
@@ -15,7 +15,7 @@ echo build windows 386
 set GOOS=windows
 set GOARCH=386
 go build -ldflags "-s -w" -o release/windows/386/pak_tools.exe
-
+pause
 echo build windows amd64
 set GOOS=windows
 set GOARCH=amd64
